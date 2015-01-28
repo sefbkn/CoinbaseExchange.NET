@@ -48,7 +48,10 @@
     <Compile Include="Core\CBAuthenticationContainer.cs" />
     <Compile Include="Endpoints\Account\AccountClient.cs" />
     <Compile Include="Endpoints\Account\Account.cs" />
+    <Compile Include="Endpoints\Account\AccountHistoryRecord.cs" />
+    <Compile Include="Endpoints\Account\GetAccountHistoryRequest.cs" />
     <Compile Include="Endpoints\Account\ListAccountsRequest.cs" />
+    <Compile Include="Endpoints\Account\GetAccountHistoryResponse.cs" />
     <Compile Include="Endpoints\Account\ListAccountsResponse.cs" />
     <Compile Include="Core\ExchangeClientBase.cs" />
     <Compile Include="Errors\ExchangeClientError.cs" />

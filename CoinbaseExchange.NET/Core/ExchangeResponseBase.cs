@@ -16,8 +16,8 @@ namespace CoinbaseExchange.NET.Core
 
         protected ExchangeResponseBase(ExchangeResponse response)
         {
-            var beforeHeader = response.Headers.LastOrDefault(x => x.Key == "CB-BEFORE");
-            var afterHeader = response.Headers.LastOrDefault(x => x.Key == "CB-AFTER");
+            var beforeHeader = response.Headers.LastOrDefault(x => x.Key != null && x.Key.ToUpper() == "CB-BEFORE");
+            var afterHeader = response.Headers.LastOrDefault(x => x.Key != null && x.Key.ToUpper() == "CB-AFTER");
 
             if (beforeHeader.Value != null)
                 BeforePaginationToken = beforeHeader.Value.LastOrDefault();
