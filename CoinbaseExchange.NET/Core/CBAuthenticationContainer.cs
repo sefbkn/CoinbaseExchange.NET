@@ -15,6 +15,15 @@ namespace CoinbaseExchange.NET.Core
 
         public CBAuthenticationContainer(string apiKey, string passphrase, string secret)
         {
+            if (String.IsNullOrWhiteSpace(apiKey))
+                throw new ArgumentNullException("apiKey", "An API key is required to use the coinbase API");
+
+            if (String.IsNullOrWhiteSpace(passphrase))
+                throw new ArgumentNullException("passphrase", "A passphrase is required to use the coinbase API");
+
+            if (String.IsNullOrWhiteSpace(secret))
+                throw new ArgumentNullException("secret", "A secret is required to use the coinbase API");
+
             this.ApiKey = apiKey;
             this.Passphrase = passphrase;
             this.Secret = secret;

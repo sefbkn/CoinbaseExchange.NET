@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace CoinbaseExchange.NET.Endpoints.Account
 {
-    public class GetAccountHistoryResponse : ExchangeResponseBase
+    public class GetAccountHistoryResponse : ExchangePageableResponseBase
     {
-        public IEnumerable<AccountHistoryRecord> AccountHistoryRecords { get; set; }
+        public IEnumerable<AccountHistory> AccountHistoryRecords { get; private set; }
 
         public GetAccountHistoryResponse(ExchangeResponse response)
             : base(response)
@@ -19,7 +19,7 @@ namespace CoinbaseExchange.NET.Endpoints.Account
             var json = response.ContentBody;
             var jArray = JArray.Parse(json);
 
-            AccountHistoryRecords = jArray.Select(elem => AccountHistoryRecord.FromJToken(elem)).ToArray();
+            AccountHistoryRecords = jArray.Select(elem => AccountHistory.FromJToken(elem)).ToList();
         }
     }
 }

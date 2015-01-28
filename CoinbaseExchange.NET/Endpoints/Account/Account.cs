@@ -14,19 +14,12 @@ namespace CoinbaseExchange.NET.Endpoints.Account
         public decimal Available { get; set; }
         public string Currency { get; set; }
 
-        public static Account FromJToken(JToken jtoken)
+        public Account(JToken jtoken)
         {
-            var id = jtoken["id"].Value<string>();
-            var currency = jtoken["currency"].Value<string>();
-            var balance = jtoken["balance"].Value<decimal>();
-            var available = jtoken["available"].Value<decimal>();
-
-            return new Account() {
-                Id = id,
-                Currency = currency,
-                Balance = balance,
-                Available = available
-            };
+            this.Id = jtoken["id"].Value<string>();
+            this.Currency = jtoken["currency"].Value<string>();
+            this.Balance = jtoken["balance"].Value<decimal>();
+            this.Available = jtoken["available"].Value<decimal>();
         }
     }
 }

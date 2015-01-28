@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CoinbaseExchange.NET.Endpoints.Account
 {
-    public class ListAccountsRequest : ExchangeCollectionRequestBase
+    public class ListAccountsRequest : ExchangePageableRequestBase
     {
         public ListAccountsRequest(
             string accountId = null,

@@ -30,5 +30,13 @@ namespace CoinbaseExchange.NET.Endpoints.Account
             var accountHistoryResponse = new GetAccountHistoryResponse(response);
             return accountHistoryResponse;
         }
+
+        public async Task<GetAccountHoldsResponse> GetAccountHolds(string accountId)
+        {
+            var request = new GetAccountHoldsRequest(accountId);
+            var response = await this.GetResponse(request);
+            var accountHoldsResponse = new GetAccountHoldsResponse(response);
+            return accountHoldsResponse;
+        }
     }
 }

@@ -3,22 +3,21 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CoinbaseExchange.NET.Endpoints.Account
 {
-    public class ListAccountsResponse : ExchangePageableResponseBase
+    public class GetAccountHoldsResponse : ExchangePageableResponseBase
     {
-        public IEnumerable<Account> Accounts { get; private set; }
+        public IEnumerable<AccountHold> AccountHolds { get; private set; }
 
-        public ListAccountsResponse(ExchangeResponse response) : base(response)
+        public GetAccountHoldsResponse(ExchangeResponse response) : base(response)
         {
             var json = response.ContentBody;
             var jArray = JArray.Parse(json);
 
-            Accounts = jArray.Select(elem => new Account(elem)).ToList();
+            AccountHolds = jArray.Select(elem => new AccountHold(elem)).ToList();
         }
     }
 }
