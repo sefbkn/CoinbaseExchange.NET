@@ -15,7 +15,7 @@ namespace CoinbaseExchange.NET.Endpoints.Account
         {
         }
 
-        public async Task<ListAccountsResponse> ListAccounts(string accountId = null, string cursor = null, long recordCount = 100, PaginationType paginationType = PaginationType.After)
+        public async Task<ListAccountsResponse> ListAccounts(string accountId = null, string cursor = null, long recordCount = 100, RequestPaginationType paginationType = RequestPaginationType.After)
         {
             var request = new ListAccountsRequest(accountId, cursor, recordCount, paginationType);
             var response = await this.GetResponse(request);

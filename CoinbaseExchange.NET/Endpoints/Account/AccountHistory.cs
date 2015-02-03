@@ -70,5 +70,4 @@ namespace CoinbaseExchange.NET.Endpoints.Account
             this.TransferType = transferTypeToken == null ? null : transferTypeToken.Value<string>();
         }
     }
-
 }

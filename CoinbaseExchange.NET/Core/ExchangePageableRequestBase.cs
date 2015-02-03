@@ -8,11 +8,11 @@ namespace CoinbaseExchange.NET.Core
 {
     public abstract class ExchangePageableRequestBase : ExchangeRequestBase
     {
-        public PaginationType PaginationType { get; protected set; }
+        public RequestPaginationType PaginationType { get; protected set; }
         public string Cursor { get; protected set; }
         public long RecordCount { get; protected set; }
 
-        public ExchangePageableRequestBase(string method) : base(method)
+        public ExchangePageableRequestBase(string method, string cursor = null, int recordCount = 100) : base(method)
         {
 
         }

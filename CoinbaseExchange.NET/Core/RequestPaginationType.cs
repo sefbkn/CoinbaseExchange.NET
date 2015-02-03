@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoinbaseExchange.NET.Core
 {
-    public enum PaginationType : int
+    public enum RequestPaginationType : int
     {
         Indeterminate = 0,
         Before = 1,

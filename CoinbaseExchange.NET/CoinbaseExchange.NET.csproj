@@ -58,12 +58,21 @@
     <Compile Include="Endpoints\Account\GetAccountHistoryResponse.cs" />
     <Compile Include="Endpoints\Account\ListAccountsResponse.cs" />
     <Compile Include="Core\ExchangeClientBase.cs" />
+    <Compile Include="Endpoints\Fills\Fill.cs" />
+    <Compile Include="Endpoints\Fills\FillsClient.cs" />
+    <Compile Include="Endpoints\Fills\GetFillsRequest.cs" />
+    <Compile Include="Endpoints\Fills\GetFillsResponse.cs" />
+    <Compile Include="Endpoints\OrderBook\BidAskOrder.cs" />
+    <Compile Include="Endpoints\OrderBook\GetProductOrderBookRequest.cs" />
+    <Compile Include="Endpoints\OrderBook\GetProductOrderBookResponse.cs" />
+    <Compile Include="Endpoints\OrderBook\RealtimeMessage.cs" />
+    <Compile Include="Endpoints\OrderBook\RealtimeOrderBookClient.cs" />
     <Compile Include="Errors\ExchangeClientError.cs" />
     <Compile Include="Core\ExchangePageableRequestBase.cs" />
     <Compile Include="Core\ExchangeRequestBase.cs" />
     <Compile Include="Core\ExchangeResponseBase.cs" />
     <Compile Include="Core\GenericExchangeResponse.cs" />
-    <Compile Include="Core\PaginationType.cs" />
+    <Compile Include="Core\RequestPaginationType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\DateTimeUtilities.cs" />
   </ItemGroup>

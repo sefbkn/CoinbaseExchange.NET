@@ -14,7 +14,7 @@ namespace CoinbaseExchange.NET.Endpoints.Account
             string accountId = null,
             string cursor = null, 
             long recordCount = 100, 
-            PaginationType paginationType = PaginationType.After) : base("GET")
+            RequestPaginationType paginationType = RequestPaginationType.After) : base("GET")
         {
             var urlFormat = String.Format("/accounts/{0}", accountId ?? String.Empty);
             this.RequestUrl = urlFormat;
