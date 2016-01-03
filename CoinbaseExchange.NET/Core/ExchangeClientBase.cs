@@ -29,7 +29,7 @@ namespace CoinbaseExchange.NET.Core
             var relativeUrl = request.RequestUrl;
             var absoluteUri = new Uri(new Uri(API_ENDPOINT_URL), relativeUrl);
 
-            var timestamp = (request.TimeStamp).ToString();
+            var timestamp = (request.TimeStamp).ToString(System.Globalization.CultureInfo.InvariantCulture);
             var body = request.RequestBody;
             var method = request.Method;
             var url = absoluteUri.ToString();

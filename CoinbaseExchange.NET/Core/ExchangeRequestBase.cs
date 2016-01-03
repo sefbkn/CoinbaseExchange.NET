@@ -22,12 +22,12 @@ namespace CoinbaseExchange.NET.Core
         protected ExchangeRequestBase(string method)
         {
             this.Method = method;
-            this.TimeStamp = DateTime.Now.ToUnixTimestamp();
+            this.TimeStamp = DateTime.UtcNow.ToUnixTimestamp();
         }
 
         protected virtual double GetCurrentUnixTimeStamp()
         {
-            return DateTime.Now.ToUnixTimestamp();
+            return DateTime.UtcNow.ToUnixTimestamp();
         }
     }
 }
