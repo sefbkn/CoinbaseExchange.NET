@@ -57,7 +57,7 @@ namespace CoinbaseExchange.NET.Core
                         response = await httpClient.GetAsync(absoluteUri);
                         break;
                     case "POST":
-                        var requestBody = new StringContent(body);
+                        var requestBody = new StringContent(body, Encoding.UTF8, "application/json");
                         response = await httpClient.PostAsync(absoluteUri, requestBody);
                         break;
                     default:
