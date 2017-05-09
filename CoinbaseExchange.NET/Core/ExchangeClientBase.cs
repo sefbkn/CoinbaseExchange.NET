@@ -14,7 +14,8 @@ namespace CoinbaseExchange.NET.Core
 {
     public abstract class ExchangeClientBase
     {
-        public const string API_ENDPOINT_URL = "https://api.exchange.coinbase.com/";
+        //public const string API_ENDPOINT_URL = "https://api.exchange.coinbase.com/";
+        public const string API_ENDPOINT_URL = "https://api-public.sandbox.exchange.coinbase.com/";
         private const string ContentType = "application/json";
 
         private readonly CBAuthenticationContainer _authContainer;
@@ -48,6 +49,8 @@ namespace CoinbaseExchange.NET.Core
                 httpClient.DefaultRequestHeaders.Add("CB-ACCESS-SIGN", signature);
                 httpClient.DefaultRequestHeaders.Add("CB-ACCESS-TIMESTAMP", timestamp);
                 httpClient.DefaultRequestHeaders.Add("CB-ACCESS-PASSPHRASE", passphrase);
+
+                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(ContentType));
 
                 httpClient.DefaultRequestHeaders.Add("User-Agent", "sefbkn.github.io");
 
